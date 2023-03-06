@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  background-color: var(--background);
 }
 ol, ul {
 	list-style: none;
@@ -50,8 +51,7 @@ table {
 :root {
   font-family: 'Lato', sans-serif;
   --background: #FFFBE9;
-  --light: #E3CAA5
-  --regular: #CEAB93
-  --dark: #AD8B73
-  
+  --light: #E3CAA5;
+  --regular: #CEAB93;
+  --dark: #AD8B73;
 }

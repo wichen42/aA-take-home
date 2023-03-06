@@ -21,14 +21,20 @@ function App() {
 ]
   return (
     <div className="App">
-        <h1>Ann's Coffee Show Reviews</h1>
+        <h1>Ann's Coffee Shop Reviews</h1>
         <div id='post-container'>
           <div id='post-header'>  
-            <h2>Posts</h2>
-            <div id='add-post'>New Post</div>
+            <div id='post-header-left'>
+              <h2>Posts</h2>
+              <span className='material-symbols-outlined'>add_circle</span>
+            </div>
+            <div id='post-header-right'>
+                <span className='material-symbols-outlined'>Sort</span>
+            </div>
           </div>
           <div id='coffee-sidebar'>
-          <p>Coffees</p>
+            <h2>Coffees</h2>
+            <span className='material-symbols-outlined'>add_circle</span>
         </div>
         </div>
 

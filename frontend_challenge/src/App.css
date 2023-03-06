@@ -1,13 +1,17 @@
 .App {
-  background-color: var(--background);
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
 }
 
 .App h1 {
   align-self: center;
+  font-weight: bold;
+  font-size: 28px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 #post-container {
@@ -17,15 +21,43 @@
 
 #post-header {
   display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: var(--dark);
+  border-radius: 5px;
+  padding: 10px;
   flex-basis: 80%;
+  margin-left: 150px;
+  margin-right: 100px;
 }
 
-#post-header h2 {
+#post-header-left {
+  display: flex;
+}
+
+#post-header-left h2 {
   font-weight: bold;
   font-size: 25px;
+  margin-right: 10px;
+}
+
+#post-header-left span {
+  cursor: pointer;
+  padding-top: 2px;
 }
 
 #coffee-sidebar {
+  display: flex;
   height: 100%;
   flex-basis: 20%;
+}
+
+#coffee-sidebar h2 {
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+#coffee-sidebar span {
+  padding-top: 2px;
 }
