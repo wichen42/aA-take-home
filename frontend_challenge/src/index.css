@@ -46,3 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+:root {
+  font-family: 'Lato', sans-serif;
+  --background: #FFFBE9;
+  --light: #E3CAA5
+  --regular: #CEAB93
+  --dark: #AD8B73
+  
+}
