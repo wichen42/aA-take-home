@@ -1,0 +1,16 @@
+.App {
+  background-color: aqua;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.post-container {
+  height: 100%;
+  flex-basis: 75%;
+}
+
+.coffee-sidebar {
+  height: 100%;
+  flex-basis: 25%;
+}
