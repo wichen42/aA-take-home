@@ -7,7 +7,6 @@
 }
 
 .App h1 {
-  align-self: center;
   font-weight: bold;
   font-size: 28px;
   padding-top: 20px;
@@ -42,6 +41,17 @@
 
 #post-header-left {
   display: flex;
+  position: relative;
+}
+
+#add-post {
+  position: absolute;
+  background-color: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  top: 0px;
+  right: -75px;
 }
 
 #post-header-left h2 {
@@ -57,6 +67,16 @@
 
 #post-header-right {
   display: flex;
+  position: relative;
+}
+
+#post-filter {
+  position: absolute;
+  background: var(--light);
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  right: 100px;
 }
 
 #post-header-right span {
@@ -75,11 +95,22 @@
   height: 100%;
   flex-basis: 20%;
   margin-left: 50px;
+  position: relative;
 }
 
 #coffee-sidebar-header-container {
   display: flex;
   margin-bottom: 1rem;
+  position: relative;
+}
+
+#add-coffee {
+  position: absolute;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  right: 80px;
 }
 
 #coffee-sidebar h2 {

@@ -1,0 +1,32 @@
+#coffee-form-container {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background-color: var(--background);
+    padding: 8px;
+    top: 40px;
+    left: -50px;
+}
+
+#coffee-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#coffee-form-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#coffee-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#coffee-caffine {
+    margin-bottom: 10px;
+}

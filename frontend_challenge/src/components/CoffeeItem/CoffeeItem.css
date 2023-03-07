@@ -1,7 +1,12 @@
 #coffee-container {
     display: flex;
+    justify-content: space-between;
     font-size: 18px;
     margin-bottom: 1rem;
+}
+
+#coffee-container-left {
+    display: flex;
 }
 
 #coffee-img {
@@ -14,4 +19,8 @@
 
 #coffee-container span {
     padding-top: 8px;
+}
+
+#coffee-delete {
+    margin-right: 50px;
 }

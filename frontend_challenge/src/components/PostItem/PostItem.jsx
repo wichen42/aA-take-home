@@ -1,16 +1,16 @@
 import './PostItem.css';
 import star_img from './star-solid.svg';
 
-const PostItem = ({post, idx}) => {
+const PostItem = ({post}) => {
 
     const stars = [];
 
     for (let i = 0; i < post.rating; i++ ) {
-        stars.push(<img src={star_img} alt="star" className='star-image'/>);
+        stars.push(<img src={star_img} alt="star" key={`star${i}`} className='star-image'/>);
     }
 
     return (
-        <div id="post-item-container" key={idx}>
+        <div id="post-item-container" key={post.title}>
             <p id='post-title'>{post.title}</p>
             <div className='star-container'>
                 {stars.map((star) => (
