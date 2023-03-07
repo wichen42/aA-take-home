@@ -18,6 +18,18 @@
     z-index: 42;
 }
 
+#post-modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#post-modal-header:first-child {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 #post-modal-close {
     cursor: pointer;
 }
@@ -25,9 +37,19 @@
 #post-form {
     display: flex;
     flex-direction: column;
+    
+}
+
+#post-form-title {
+    margin-bottom: 10px;
+}
+
+#post-form-text {
+    margin-bottom: 20px;
 }
 
 #post-form-middle {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
