@@ -56,6 +56,7 @@ const postData = [
 function App() {
 
   const [coffeeList, setCoffeeList] = useState([]);
+  const [postList, setPostList] = useState([]);
   const [openCoffeeModal, setOpenCoffeeModal] = useState(false);
   const [openPostModal, setOpenPostModal] = useState(false);
   const [showAddPost, setShowAddPost] = useState(false);
@@ -64,16 +65,23 @@ function App() {
   
   useEffect(() => {
     setCoffeeList(coffeeData);
+    setPostList(postData);
   }, [])
 
   const addCoffee = (coffee) => {
     setCoffeeList(coffeeList => [...coffeeList, coffee]);
+    setOpenCoffeeModal(false);
   };
 
   const removeCoffee = (coffee) => {
     const update = coffeeList.filter((obj) => obj.name !== coffee.name);
     setCoffeeList(update);
-  }
+  };
+
+  const addPost = (post) => {
+    setPostList(postList => [...postList, post]);
+    setOpenPostModal(false);
+  };
 
   return (
     <div className="App">
@@ -109,7 +117,7 @@ function App() {
             </div>
 
             <div id='post-body'>
-              {postData.map((post, idx) => (
+              {postList.map((post, idx) => (
                 <PostItem post={post} key={idx} />
               ))}
             </div>
@@ -124,7 +132,9 @@ function App() {
                       onClick={() => setOpenCoffeeModal(true)}
                 >add_circle</span>
               </div>
-              <CoffeeModal open={openCoffeeModal} close={() => setOpenCoffeeModal(false)} addCoffee={addCoffee}></CoffeeModal>
+              <CoffeeModal open={openCoffeeModal} 
+                           close={() => setOpenCoffeeModal(false)} 
+                           addCoffee={addCoffee}></CoffeeModal>
               {coffeeList.map((coffee, c_idx) => (
                 <CoffeeItem coffee={coffee} key={c_idx} removeCoffee={removeCoffee}/>
               ))}
@@ -133,7 +143,10 @@ function App() {
               )}
         </div>
         </div>
-        <PostModal open={openPostModal} close={() => setOpenPostModal(false)} coffeeList={coffeeList}/>
+        <PostModal open={openPostModal} 
+                   close={() => setOpenPostModal(false)} 
+                   coffeeList={coffeeList} 
+                   addPost={addPost}/>
 
     </div>
   )
