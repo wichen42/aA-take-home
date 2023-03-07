@@ -3,6 +3,7 @@ import './App.css'
 import CoffeeItem from './components/CoffeeItem/CoffeeItem';
 import PostItem from './components/PostItem/PostItem';
 import CoffeeModal from './components/CoffeeModal/CoffeeModal';
+import PostModal from './components/PostModal/PostModal';
 
 const coffeeData = [
   {
@@ -56,6 +57,7 @@ function App() {
 
   const [coffeeList, setCoffeeList] = useState([]);
   const [openCoffeeModal, setOpenCoffeeModal] = useState(false);
+  const [openPostModal, setOpenPostModal] = useState(false);
   const [showAddPost, setShowAddPost] = useState(false);
   const [showAddCoffee, setShowAddCoffee] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
@@ -84,6 +86,7 @@ function App() {
                 <span className='material-symbols-outlined'
                       onMouseEnter={() => setShowAddPost(true)}
                       onMouseLeave={() => setShowAddPost(false)}
+                      onClick={() => setOpenPostModal(true)}
                 >add_circle</span>
                 {showAddPost && (
                   <div id='add-post'>Add Post</div>
@@ -130,8 +133,8 @@ function App() {
               )}
         </div>
         </div>
+        <PostModal open={openPostModal} close={() => setOpenPostModal(false)} coffeeList={coffeeList}/>
 
-        
     </div>
   )
 }
