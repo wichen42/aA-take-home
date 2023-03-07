@@ -25,6 +25,7 @@ const coffeeData = [
 
 const postData = [
   {
+    id: 1,
     title: "The First Cup",
     rating: 5,
     coffee: {
@@ -34,6 +35,7 @@ const postData = [
     text: "I can't quite remember what it was, but it was made by Ann, I loved it because of that."
   },
   {
+    id: 2,
     title: "The Second Cup",
     rating: 4,
     coffee: {
@@ -43,6 +45,7 @@ const postData = [
     text: "She always makes the best coffee, I don't think there is any other like it."
   },
   {
+    id: 3,
     title: "The Third Cup",
     rating: 5,
     coffee: {
@@ -62,11 +65,36 @@ function App() {
   const [showAddPost, setShowAddPost] = useState(false);
   const [showAddCoffee, setShowAddCoffee] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
+  const [filter, setFilter] = useState("asc");
+
+
   
   useEffect(() => {
     setCoffeeList(coffeeData);
     setPostList(postData);
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    const updatePostList = [...postList];
+
+    if (filter === "dsc") {
+      updatePostList.sort((a, b) => a.id > b.id ? -1 : 1);
+      console.log(updatePostList);
+      setPostList(updatePostList);
+    } else if (filter === "coffee") {
+      updatePostList.sort(function(a,b) {
+        if (a.coffee.type.toLowerCase() < b.coffee.type.toLowerCase()) return -1;
+        if (a.coffee.type.toLowerCase() > b.coffee.type.toLowerCase()) return 1;
+        return 0;
+      })
+      console.log(updatePostList);
+      setPostList(updatePostList);
+    } else {
+        updatePostList.sort((a, b) => a.id > b.id ? 1 : -1);
+        console.log(updatePostList);
+      setPostList(updatePostList);
+    }
+  }, [filter]);
 
   const addCoffee = (coffee) => {
     setCoffeeList(coffeeList => [...coffeeList, coffee]);
@@ -105,7 +133,7 @@ function App() {
                    onMouseLeave={() => setShowFilter(false)}
               >
                   <span className='material-symbols-outlined'>Sort</span>
-                  <select id="post-select">
+                  <select id="post-select" onChange={(e) => setFilter(e.target.value)}>
                     <option value="asc">asc</option>
                     <option value="dsc">dsc</option>
                     <option value="coffee">coffee</option>
