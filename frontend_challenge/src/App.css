@@ -71,9 +71,15 @@
 
 #coffee-sidebar {
   display: flex;
+  flex-direction: column;
   height: 100%;
   flex-basis: 20%;
   margin-left: 50px;
+}
+
+#coffee-sidebar-header-container {
+  display: flex;
+  margin-bottom: 1rem;
 }
 
 #coffee-sidebar h2 {

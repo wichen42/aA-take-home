@@ -1,4 +1,5 @@
 import './App.css'
+import CoffeeItem from './components/CoffeeItem/CoffeeItem';
 import PostItem from './components/PostItem/PostItem';
 
 function App() {
@@ -25,19 +26,28 @@ function App() {
     {
       title: "The First Cup",
       rating: 5,
-      type: "Espresso",
+      coffee: {
+        type: "Espresso",
+        caffine: 64
+      },
       text: "I can't quite remember what it was, but it was made by Ann, I loved it because of that."
     },
     {
       title: "The Second Cup",
       rating: 4,
-      type: "Black",
+      coffee: {
+        type: "Black",
+        caffine: 12
+      },
       text: "She always makes the best coffee, I don't think there is any other like it."
     },
     {
       title: "The Third Cup",
       rating: 5,
-      type: "Latte",
+      coffee: {
+        type: "Latte",
+        caffine: 64
+      },
       text: "Ann made me a latte, this time with honey and cinnamon. She always puts so much of herself into the coffee she makes."
     }
   ];
@@ -69,8 +79,13 @@ function App() {
             </div>
           </div>
           <div id='coffee-sidebar'>
-            <h2>Coffees</h2>
-            <span className='material-symbols-outlined'>add_circle</span>
+              <div id='coffee-sidebar-header-container'>
+                <h2>Coffees</h2>
+                <span className='material-symbols-outlined'>add_circle</span>
+              </div>
+              {coffeeData.map((coffee, c_idx) => (
+                <CoffeeItem coffee={coffee} key={c_idx}/>
+              ))}
         </div>
         </div>
 

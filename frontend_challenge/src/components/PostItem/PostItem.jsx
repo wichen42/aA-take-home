@@ -11,14 +11,14 @@ const PostItem = ({post, idx}) => {
 
     return (
         <div id="post-item-container" key={idx}>
-            <p>{post.title}</p>
+            <p id='post-title'>{post.title}</p>
             <div className='star-container'>
                 {stars.map((star) => (
                     star
                 ))}
             </div>
-            <p>{post.text}</p>
-            <p>{post.type}</p>
+            <p id='post-text'>{post.text}</p>
+            <p id='post-type'>{post.coffee.type} - {post.coffee.caffine} mg per oz</p>
         </div>
     );
 };
