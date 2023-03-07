@@ -4,4 +4,4 @@ Clone the repo and run npm install in terminal to install package dependecies.
 
 Run npm run dev to start a local environent. 
 
-ToDo: Finish Backend Challenge
+To Do: Finish Backend Challenge
